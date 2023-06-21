@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Feedback System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav d-flex justify-content-center align-items-center ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <p>Welcome <strong>{{name}}</strong></p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{url_for('logout')}}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <h3 class="text-center py-3 text-decoration-underline">Feedback System</h3>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-6">
+            <form method="POST" action="/feedback">
+              <div class="mb-1">
+                <label for="formGroupExampleInput" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="{{name}}">
+              </div>
+              <div class="mb-1">
+                <label for="formGroupExampleInput2" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="{{username}}">
+              </div>
+              <div class="mb-1">
+                <label for="formGroupExampleInput2" class="form-label">Course</label>
+                <input type="text" class="form-control" id="course" name="course" placeholder="Enter course" value="{{course}}">
+              </div>
+              <div class="mb-1">
+                <label for="formGroupExampleInput2" class="form-label">The class provides with depth understanding *</label>
+                <br>
+                <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="depth" id="inlineRadio1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="depth" id="inlineRadio2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="depth" id="inlineRadio2" value="3">
+                    <label class="form-check-label" for="inlineRadio2">3</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="depth" id="inlineRadio2" value="4">
+                    <label class="form-check-label" for="inlineRadio2">4</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="depth" id="inlineRadio2" value="5">
+                    <label class="form-check-label" for="inlineRadio2">5</label>
+                  </div>
+              </div>
+              <div class="mb-1">
+                <label for="formGroupExampleInput2" class="form-label">The instructor was well prepared and organisation every class *</label>
+                <br>
+                <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="prepare" id="inlineRadio1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="prepare" id="inlineRadio2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="prepare" id="inlineRadio2" value="3">
+                    <label class="form-check-label" for="inlineRadio2">3</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="prepare" id="inlineRadio2" value="4">
+                    <label class="form-check-label" for="inlineRadio2">4</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="prepare" id="inlineRadio2" value="5">
+                    <label class="form-check-label" for="inlineRadio2">5</label>
+                  </div>
+              </div><div class="mb-1">
+                <label for="formGroupExampleInput2" class="form-label">The instructor encoughrage discussion and respond to questions *</label>
+                <br>
+                <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="questions" id="inlineRadio1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="questions" id="inlineRadio2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="questions" id="inlineRadio2" value="3">
+                    <label class="form-check-label" for="inlineRadio2">3</label>
+                  </div>
+                  <div class="form-check form-check-inline pe-2">
+                    <input class="form-check-input" type="radio" name="questions" id="inlineRadio2" value="4">
+                    <label class="form-check-label" for="inlineRadio2">4</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="questions" id="inlineRadio2" value="5">
+                    <label class="form-check-label" for="inlineRadio2">5</label>
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Your Comment</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="comments" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success d-block w-100">Submit Feedback</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
